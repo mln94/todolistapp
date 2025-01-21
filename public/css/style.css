@@ -1,0 +1,135 @@
+.taskBlock {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 16px 0;
+    transition: background-color 0.3s ease;
+}
+
+.taskBlock:hover {
+    background-color: #e0e0e0;
+}
+
+#global {
+    width: 100%;         
+    max-width: 500px;       
+    margin: 20px auto 0 auto;        
+    padding: 20px;     
+    background-color: #fff; 
+    border-radius: 8px;    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* main page new style */
+
+#new {
+    width: 100%;         
+    max-width: 300px;       
+    margin: 20px auto 0 auto;        
+    padding: 20px;     
+    background-color: #fff; 
+    border-radius: 8px;    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#new a{
+    color: black;
+    text-decoration: none;
+}
+
+/* header in index */
+
+header a {
+    background-color: #5471f1;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* section tasks in index*/
+
+#tasks {
+    width: 500px;
+}
+
+.tasksStatus::before {
+    content: "ˇ";
+    font-size: 24px;
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    padding: 0 5px 0 0;
+}
+
+.tasksStatus {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.tasksNumber {
+    float: right;
+}
+
+.dropdownTasks {
+    padding: 0 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.task-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.dropDown {
+    max-height: 500px;
+    transition: 0.5s ease-in-out;
+}
+
+/* form style in new page*/
+
+#new button {
+    background-color: #5471f1;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#date {
+    display: flex;
+    gap: 20px
+}
+
+input, select, textarea {
+    box-sizing: border-box;    
+    width: 100%;     
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+input[type="date"]{
+    color: gray;
+}
+
+ 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="global">
+        <header>
+            <h2>My to do list</h2>
+            <a href="/new">Add task</a>
+        </header>
+        <main>
+            <!-- <%- include("../partials/confirmationMessage") %> -->
+                <section id="tasks">
+                    <div class="flexContainer">
+                        <p class="tasksStatus">Not started
+                            <span class="tasksNumber"><%= groupedTasks.notStarted.length %></span>
+                        </p>
+                    </div>
+                    <div class="dropdownTasks">
+                        <% groupedTasks.notStarted.forEach(task => { %>
+                                <div class="task">
+                                    <p class="task-title">
+                                        <span><%= task.title %></span>
+                                        <span class="priority"><%= task.priority %></span>
+                                    </p>
+                                    <p><%= task.startDate %></p>
+                                    <p><%= task.dueDate %></p>
+                                </div>
+                        <% }) %>
+                    </div>
+    
+                    <div class="flexContainer">
+                        <p class="tasksStatus">In progress
+                            <span class="tasksNumber"><%= groupedTasks.inProgress.length %></span>
+                        </p>
+                    </div>
+                    <div class="dropdownTasks">
+                        <% groupedTasks.inProgress.forEach(task => { %>
+                                <div class="task">
+                                    <p class="task-title">
+                                        <span><%= task.title %></span>
+                                        <span class="priority"><%= task.priority %></span>
+                                    </p>
+                                    <p><%= task.startDate %></p>
+                                    <p><%= task.dueDate %></p>
+                                </div>
+                        <% }) %>
+                    </div>
+                    <div class="flexContainer">
+                        <p class="tasksStatus">Completed 
+                            <span class="tasksNumber"><%= groupedTasks.completed.length %></span>
+                        </p>
+                    </div>
+                    <div class="dropdownTasks">
+                        <% groupedTasks.completed.forEach(task => { %>
+                                <div class="task">
+                                    <p class="task-title">
+                                        <span><%= task.title %></span>
+                                        <span class="priority"><%= task.priority %></span>
+                                    </p>
+                                    <p><%= task.startDate %></p>
+                                    <p><%= task.dueDate %></p>
+                                </div>
+                        <% }) %>
+                    </div>
+                </section>
+    
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

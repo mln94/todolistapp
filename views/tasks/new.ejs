@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main id="new">
+        <a href="/" class="back-arrow">&#8592;</a>
+        <h2>Add task</h2>
+        <form action="/createTask" method="POST">
+            <%- include("../include/_form") %><br>
+            <button type="submit">Create task</button>
+        </form>
+    </main>
+</body>
+</html>
