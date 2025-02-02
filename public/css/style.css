@@ -12,30 +12,12 @@
 }
 
 #global {
-    width: 100%;         
-    max-width: 500px;       
+    width: 100%;            
     margin: 20px auto 0 auto;        
     padding: 20px;     
     background-color: #fff; 
     border-radius: 8px;    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* main page new style */
-
-#new {
-    width: 100%;         
-    max-width: 300px;       
-    margin: 20px auto 0 auto;        
-    padding: 20px;     
-    background-color: #fff; 
-    border-radius: 8px;    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#new a{
-    color: black;
-    text-decoration: none;
 }
 
 /* header in index */
@@ -44,7 +26,7 @@ header a {
     background-color: #5471f1;
     text-decoration: none;
     text-align: center;
-    width: 100%;
+    width: 25%;
     border: none;
     border-radius: 10px;
     padding: 10px 0;
@@ -52,13 +34,13 @@ header a {
     font-weight: bold;
     cursor: pointer;
     display: block;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
 }
 
-/* section tasks in index*/
+/* section tasks in index */
 
 #tasks {
-    width: 500px;
+    width: 800px;
 }
 
 .tasksStatus::before {
@@ -76,9 +58,57 @@ header a {
     cursor: pointer;
 }
 
-.tasksNumber {
-    float: right;
+.taskParameter {
+    width: 15px;
+    color: #5471f1;
+    visibility: hidden;
+    cursor: pointer;
+    justify-self: center;
 }
+
+.taskMenu {
+    width: 100px;  /* Adjust the width of the dropdown */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Soft shadow effect */
+    background-color: white;
+    border-radius: 10px;
+    padding: 0;
+    list-style: none;
+    /* display: none;   */
+    overflow: hidden;
+    transform: translate(540px, -20px);
+    position: absolute;
+    visibility: hidden;
+}
+
+.taskMenu li {
+    list-style: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+}
+
+.taskMenu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 100%;
+}
+
+
+.taskMenu li:hover {
+    background-color: #5471f1;
+}
+
+.taskMenu li:hover a {
+    color: white
+}
+
+.toggle-parameter {
+    visibility: visible;
+}
+/* .tasksNumber {
+    float: left;
+} */
 
 .dropdownTasks {
     padding: 0 5px;
@@ -87,12 +117,46 @@ header a {
     transition: 0.5s ease-in-out;
 }
 
+/* .task {
+    position: relative;
+} */
+
 .task-title {
-    display: flex;
+    display: grid;
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
     margin: 10px 0;
+    grid-template-columns: 40px 1fr 40px 80px 80px;
+}
+
+.task-radio {
+    margin: 0 10px 0 0;
+}
+.task-date {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.task-title span:nth-of-type(1) {
+    flex-grow: 1;
+}
+
+.task-title span {
+    margin-right: 10px;
+}
+
+.priority {
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: white;
+    justify-self: center;
+}
+
+.dueDate {
+    justify-self: center;
 }
 
 .dropDown {
@@ -102,7 +166,7 @@ header a {
 
 /* form style in new page*/
 
-#new button {
+.form_group button {
     background-color: #5471f1;
     width: 100%;
     border: none;
@@ -113,12 +177,7 @@ header a {
     cursor: pointer;
 }
 
-#date {
-    display: flex;
-    gap: 20px
-}
-
-input, select, textarea {
+form input, select, textarea {
     box-sizing: border-box;    
     width: 100%;     
     margin: 10px 0;
@@ -131,5 +190,24 @@ input, select, textarea {
 input[type="date"]{
     color: gray;
 }
+
+/* new page style */
+
+.form_group {
+    width: 100%;         
+    max-width: 300px;       
+    margin: 20px auto 0 auto;        
+    padding: 20px;     
+    background-color: #fff; 
+    border-radius: 8px;    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form_group a{
+    color: black;
+    text-decoration: none;
+}
+
+
 
  

@@ -5,3 +5,7 @@ exports.home = (req, res) => {
 exports.add = (req ,res ) => {
     res.render("tasks/new")
 }
+
+exports.edit = (req, res) => {
+    res.render("tasks/edit")
+}

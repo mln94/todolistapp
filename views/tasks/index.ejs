@@ -13,7 +13,9 @@
             <a href="/new">Add task</a>
         </header>
         <main>
-            <!-- <%- include("../partials/confirmationMessage") %> -->
+            <section>
+                <input type="text" id="addList">
+            </section>
                 <section id="tasks">
                     <div class="flexContainer">
                         <p class="tasksStatus">Not started
@@ -24,11 +26,20 @@
                         <% groupedTasks.notStarted.forEach(task => { %>
                                 <div class="task">
                                     <p class="task-title">
+                                        <input type="radio" name="taskRadio" id="task-<%= task._id %>" class="task-radio">
                                         <span><%= task.title %></span>
+                                        <img class="taskParameter" src="/images/threedots.svg"/>
                                         <span class="priority"><%= task.priority %></span>
+                                        <span class="dueDate"><%= task.dueDate %></span>
                                     </p>
-                                    <p><%= task.startDate %></p>
-                                    <p><%= task.dueDate %></p>
+                                    <ul class="taskMenu" id="menu-<%= task._id %>">
+                                        <li><a href="/edit/<%= task._id %>">Edit</a></li>
+                                        <li><a href="/delete/<%= task.id %>">Delete</a></li>
+                                    </ul>
+                                    <!-- <p class="task-date">
+                                        <span>Start date: <%= task.startDate %></span>
+                                        <span>End date: <%= task.dueDate %></span>
+                                    </p> -->
                                 </div>
                         <% }) %>
                     </div>
@@ -42,11 +53,20 @@
                         <% groupedTasks.inProgress.forEach(task => { %>
                                 <div class="task">
                                     <p class="task-title">
+                                        <input type="radio" name="taskRadio" id="task-<%= task.id %>" class="task-radio">
                                         <span><%= task.title %></span>
+                                        <img class="taskParameter" src="/images/threedots.svg"/>
                                         <span class="priority"><%= task.priority %></span>
+                                        <span class="dueDate"><%= task.dueDate %></span>
                                     </p>
-                                    <p><%= task.startDate %></p>
-                                    <p><%= task.dueDate %></p>
+                                    <ul class="taskMenu" id="menu-<%= task._id %>">
+                                        <li><a href="/edit/<%= task._id %>">Edit</a></li>
+                                        <li><a href="/delete/<%= task.id %>">Delete</a></li>
+                                    </ul>
+                                    <!-- <p class="task-date">
+                                        <span>Start date: <%= task.startDate %></span>
+                                        <span>End date: <%= task.dueDate %></span>
+                                    </p> -->
                                 </div>
                         <% }) %>
                     </div>
@@ -59,11 +79,20 @@
                         <% groupedTasks.completed.forEach(task => { %>
                                 <div class="task">
                                     <p class="task-title">
+                                        <input type="radio" name="taskRadio" id="task-<%= task.id %>" class="task-radio">
                                         <span><%= task.title %></span>
+                                        <img class="taskParameter" src="/images/threedots.svg"/>
                                         <span class="priority"><%= task.priority %></span>
+                                        <span class="dueDate"><%= task.dueDate %></span>
                                     </p>
-                                    <p><%= task.startDate %></p>
-                                    <p><%= task.dueDate %></p>
+                                    <ul class="taskMenu" id="menu-<%= task._id %>">
+                                        <li><a href="/edit/<%= task._id %>">Edit</a></li>
+                                        <li><a href="/delete/<%= task._id %>">Delete</a></li>
+                                    </ul>
+                                    <!-- <p class="task-date">
+                                        <span>Start date: <%= task.startDate %></span>
+                                        <span>End date: <%= task.dueDate %></span>
+                                    </p> -->
                                 </div>
                         <% }) %>
                     </div>
@@ -71,6 +100,6 @@
     
         </main>
     </div>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

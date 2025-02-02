@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="form_group">
+        <a href="/" class="back-arrow">&#8592;</a>
+        <h2>Edit task</h2>
+        <form id="editForm">
+            <input type="hidden" id="id" name="id" value="<%=task._id%>">
+            <div>
+                <label for="titleLow">Title:</label><br>
+                <input type="text" id="title" name="title" value="<%=task.title%>">
+            </div>
+            
+            <div>
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description"><%=task.description%></textarea>
+            </div>
+            
+            <div>
+                <label for="dueDate">due date:</label><br>
+                <input type="date" id="dueDate" name="dueDate" value="<%=task.dueDate%>">
+            </div>
+            
+            <div>
+                <label for="priority">Priority:</label><br>
+                <select id="priority" name="priority" required>
+                    <!-- <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option> -->
+                    <option value="low" "<%= task.priority === "low" ? "selected" : "" %>>Low</option>
+                    <option value="medium" <%= task.priority === "medium" ? "selected" : "" %>>Medium</option>
+                    <option value="high" <%= task.priority === "high" ? "selected" : "" %>>High</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="status">Status:</label><br>
+                <select id="status" name="status" required>
+                    <option value="notStarted" <%= task.status === "notStarted" ? "selected" :""%>>Not Started</option>
+                    <option value="inProgress" <%= task.status === "inProgress" ? "selected" :""%>>In Progress</option>
+                    <option value="completed" <%= task.status === "completed" ? "selected" :""%>>Completed </option>
+                </select>
+            </div>
+            <button type="submit">Edit task</button>
+        </form>
+    </main>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
