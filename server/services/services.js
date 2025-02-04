@@ -6,6 +6,6 @@ exports.add = (req ,res ) => {
     res.render("tasks/new")
 }
 
-exports.edit = (req, res) => {
-    res.render("tasks/edit")
+exports.taskArea = (req, res) => {
+    res.render("tasks/taskarea")
 }

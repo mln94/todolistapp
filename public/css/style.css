@@ -1,23 +1,6 @@
-.taskBlock {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin: 16px 0;
-    transition: background-color 0.3s ease;
-}
-
-.taskBlock:hover {
-    background-color: #e0e0e0;
-}
-
-#global {
-    width: 100%;            
-    margin: 20px auto 0 auto;        
-    padding: 20px;     
-    background-color: #fff; 
-    border-radius: 8px;    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
+    margin: 0;
+    background-color: #eff0f5;
 }
 
 /* header in index */
@@ -37,177 +20,95 @@ header a {
     margin: 0 auto 20px auto;
 }
 
-/* section tasks in index */
+/* section main in index */
 
-#tasks {
-    width: 800px;
-}
-
-.tasksStatus::before {
-    content: "ˇ";
-    font-size: 24px;
-    display: table-cell;
-    vertical-align: middle;
-    float: left;
-    padding: 0 5px 0 0;
-}
-
-.tasksStatus {
-    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
-    padding-bottom: 3px;
-    cursor: pointer;
-}
-
-.taskParameter {
-    width: 15px;
-    color: #5471f1;
-    visibility: hidden;
-    cursor: pointer;
-    justify-self: center;
-}
-
-.taskMenu {
-    width: 100px;  /* Adjust the width of the dropdown */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Soft shadow effect */
-    background-color: white;
-    border-radius: 10px;
-    padding: 0;
-    list-style: none;
-    /* display: none;   */
-    overflow: hidden;
-    transform: translate(540px, -20px);
-    position: absolute;
-    visibility: hidden;
-}
-
-.taskMenu li {
-    list-style: none;
-    cursor: pointer;
-    padding: 5px 10px;
-    transition: background 0.3s ease;
-}
-
-.taskMenu li a {
-    text-decoration: none;
-    color: black;
-    display: block;
+main {
     width: 100%;
+    display: flex;
 }
 
+/* section lists in index */
 
-.taskMenu li:hover {
-    background-color: #5471f1;
+#lists {
+    width: 200px;
+    background-color: white;
 }
 
-.taskMenu li:hover a {
-    color: white
+#lists #addList:focus{
+    outline: none;
 }
 
-.toggle-parameter {
-    visibility: visible;
-}
-/* .tasksNumber {
-    float: left;
-} */
-
-.dropdownTasks {
-    padding: 0 5px;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
+#lists #addList:focus::placeholder{
+    color: #d8dae2;
 }
 
-/* .task {
-    position: relative;
-} */
-
-.task-title {
-    display: grid;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-    margin: 10px 0;
-    grid-template-columns: 40px 1fr 40px 80px 80px;
+#lists #baseAddList:hover {
+    background-color: rgb(244, 244, 244);
 }
 
-.task-radio {
-    margin: 0 10px 0 0;
+#lists #addList {
+    border: none;
+    background: transparent;
+    padding: 0;
 }
-.task-date {
+
+#baseAddList {
+    padding: 15px 0 15px 10px;
+    font-size: 0;  /* Supprime l'espace blanc entre les éléments */
+}
+
+#baseAddList img {
+    padding: 0 10px ;
+}
+
+#baseAddList button{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+#addList::placeholder {
+    color: #5471f1;
+}
+
+.list {
     display: flex;
     align-items: center;
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.task-title span:nth-of-type(1) {
-    flex-grow: 1;
-}
-
-.task-title span {
-    margin-right: 10px;
-}
-
-.priority {
-    padding: 3px 10px;
-    border-radius: 20px;
-    color: white;
-    justify-self: center;
-}
-
-.dueDate {
-    justify-self: center;
-}
-
-.dropDown {
-    max-height: 500px;
-    transition: 0.5s ease-in-out;
-}
-
-/* form style in new page*/
-
-.form_group button {
-    background-color: #5471f1;
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 20px 0;
-    color: white;
-    font-weight: bold;
+    padding: 10px 15px 10px  10px;
     cursor: pointer;
+    position: relative;  /* Needed for absolute positioning */
 }
 
-form input, select, textarea {
-    box-sizing: border-box;    
-    width: 100%;     
-    margin: 10px 0;
-    border-radius: 10px;
-    border: none;
-    background-color: #f5f5f5;
-    padding: 10px;
+.list:hover {
+    background-color: rgb(244, 244, 244);
 }
 
-input[type="date"]{
-    color: gray;
+.list p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds space between the image and text */
 }
 
-/* new page style */
-
-.form_group {
-    width: 100%;         
-    max-width: 300px;       
-    margin: 20px auto 0 auto;        
-    padding: 20px;     
-    background-color: #fff; 
-    border-radius: 8px;    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.list p img {
+    padding: 0 8px;
 }
 
-.form_group a{
-    color: black;
+.list p a {
     text-decoration: none;
+    color: black;
 }
 
+.list p span{
+    float: right;
+}
+
+.numberOfTask {
+    position: absolute;
+    right: 10px;
+    color: black
+}
 
 
  

@@ -13,91 +13,26 @@
             <a href="/new">Add task</a>
         </header>
         <main>
-            <section>
-                <input type="text" id="addList">
+            <section id="lists">
+                <div id="baseAddList">
+                    <button type="button">
+                        <img src="/images/plus.svg">
+                    </button>
+                    <input type="text" id="addList" placeholder="New List">
+                </div>
+                <% if (locals.lists != null) { %>
+                    <% lists.forEach(list => { %>
+                        <div class="list">
+                            <p>
+                                <img src="/images/list.svg">
+                                <a href="/taskarea/<%=list.id %>"><%= list.title %></a>
+                            </p>
+                            <span class="numberOfTask">0</span>
+                        </div>
+                    <% }) %>
+                <% } %>
             </section>
-                <section id="tasks">
-                    <div class="flexContainer">
-                        <p class="tasksStatus">Not started
-                            <span class="tasksNumber"><%= groupedTasks.notStarted.length %></span>
-                        </p>
-                    </div>
-                    <div class="dropdownTasks">
-                        <% groupedTasks.notStarted.forEach(task => { %>
-                                <div class="task">
-                                    <p class="task-title">
-                                        <input type="radio" name="taskRadio" id="task-<%= task._id %>" class="task-radio">
-                                        <span><%= task.title %></span>
-                                        <img class="taskParameter" src="/images/threedots.svg"/>
-                                        <span class="priority"><%= task.priority %></span>
-                                        <span class="dueDate"><%= task.dueDate %></span>
-                                    </p>
-                                    <ul class="taskMenu" id="menu-<%= task._id %>">
-                                        <li><a href="/edit/<%= task._id %>">Edit</a></li>
-                                        <li><a href="/delete/<%= task.id %>">Delete</a></li>
-                                    </ul>
-                                    <!-- <p class="task-date">
-                                        <span>Start date: <%= task.startDate %></span>
-                                        <span>End date: <%= task.dueDate %></span>
-                                    </p> -->
-                                </div>
-                        <% }) %>
-                    </div>
-    
-                    <div class="flexContainer">
-                        <p class="tasksStatus">In progress
-                            <span class="tasksNumber"><%= groupedTasks.inProgress.length %></span>
-                        </p>
-                    </div>
-                    <div class="dropdownTasks">
-                        <% groupedTasks.inProgress.forEach(task => { %>
-                                <div class="task">
-                                    <p class="task-title">
-                                        <input type="radio" name="taskRadio" id="task-<%= task.id %>" class="task-radio">
-                                        <span><%= task.title %></span>
-                                        <img class="taskParameter" src="/images/threedots.svg"/>
-                                        <span class="priority"><%= task.priority %></span>
-                                        <span class="dueDate"><%= task.dueDate %></span>
-                                    </p>
-                                    <ul class="taskMenu" id="menu-<%= task._id %>">
-                                        <li><a href="/edit/<%= task._id %>">Edit</a></li>
-                                        <li><a href="/delete/<%= task.id %>">Delete</a></li>
-                                    </ul>
-                                    <!-- <p class="task-date">
-                                        <span>Start date: <%= task.startDate %></span>
-                                        <span>End date: <%= task.dueDate %></span>
-                                    </p> -->
-                                </div>
-                        <% }) %>
-                    </div>
-                    <div class="flexContainer">
-                        <p class="tasksStatus">Completed 
-                            <span class="tasksNumber"><%= groupedTasks.completed.length %></span>
-                        </p>
-                    </div>
-                    <div class="dropdownTasks">
-                        <% groupedTasks.completed.forEach(task => { %>
-                                <div class="task">
-                                    <p class="task-title">
-                                        <input type="radio" name="taskRadio" id="task-<%= task.id %>" class="task-radio">
-                                        <span><%= task.title %></span>
-                                        <img class="taskParameter" src="/images/threedots.svg"/>
-                                        <span class="priority"><%= task.priority %></span>
-                                        <span class="dueDate"><%= task.dueDate %></span>
-                                    </p>
-                                    <ul class="taskMenu" id="menu-<%= task._id %>">
-                                        <li><a href="/edit/<%= task._id %>">Edit</a></li>
-                                        <li><a href="/delete/<%= task._id %>">Delete</a></li>
-                                    </ul>
-                                    <!-- <p class="task-date">
-                                        <span>Start date: <%= task.startDate %></span>
-                                        <span>End date: <%= task.dueDate %></span>
-                                    </p> -->
-                                </div>
-                        <% }) %>
-                    </div>
-                </section>
-    
+  
         </main>
     </div>
     <script src="/js/script.js"></script>

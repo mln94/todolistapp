@@ -4,13 +4,20 @@ const services = require("../services/services")
 const controllers = require("../controllers/controllers")
 
 
-route.get("/", controllers.find)
+// route.get("/", controllers.find, controllers.findList)
 route.get("/new", services.add)
+// route.get("/", controllers.findList, (req, res) => {
+//     // Once both controllers have populated req.lists and req.tasks, render the view
+//     res.render("tasks/index", { 
+//         lists: req.lists,   // Data from listController
+//         // tasks: req.tasks    // Data from taskController
+//     });
+// });
 
+route.get("/", controllers.findList)
 
-route.post("/createTask", controllers.create)
-route.get("/edit/:id", controllers.findOne)
+route.get("/taskarea/:id", controllers.tasksArea)
 
-route.put("/edit/:id", controllers.edit)
+route.post("/addList", controllers.createList)
 
 module.exports = route
